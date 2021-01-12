@@ -3,9 +3,15 @@
     margin: 0;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+    
 }
 head{
     min-width: 500px;
+}
+body {
+    margin-top: 69px;
+    background-color:  #f0f0f0;
+    margin-bottom: 40px;
 }
 
 /* THIS IS FOR THE HEADER */
@@ -91,6 +97,96 @@ head{
 
 /* MAIN CONTENT */
 .main{
-    margin-top: 75px;
     min-width: 490px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.content-container{
+    min-width: 490px;
+    max-width: 850px;
+    width: 100%;
+    margin-left: 0px;
+}
+.side-bar {
+    max-width: 370px;
+    margin-right:0px;
+}
+@media only screen and (max-width: 940px){
+    .main{
+        flex-direction: column;
+    }
+}
+.header-image{
+    background: url(/images/journal.jpeg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-title{
+    font-size: 4.3rem;
+    color: #ffffff;
+}
+
+/* THIS IS FOR THE CONTENT */
+.content-title{
+    font-size: 2.3rem;
+    margin-top: 20px;
+    padding: 20px;
+}
+.content{
+    margin-top:20px;
+    padding: 20px;
+    background-color: #ffffff
+}
+.article-thumbnail{
+    margin-top:20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.article-thumbnail-image{
+    width: 20%;
+    background: url(/images/journal.jpeg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.article-thumbnail-content{
+    width: 80%;
+    padding: 20px;
+    font-size: 1rem;
+}
+.article-thumbnail-content-title{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.article-thumbnail-content-subtitle{
+    font-size: 0.9rem;
+    color: #424242;
+    margin-left: 5px;
+}
+#article1 {
+    background: url(/images/content-thumbnail/image3.jpeg);
+    background-size: cover;
+}
+#article2 {
+    background: url(/images/content-thumbnail/image2.jpeg);
+    background-size: cover;
+}
+#article3 {
+    background: url(/images/content-thumbnail/image1.jpeg);
+    background-size: cover;
 }
