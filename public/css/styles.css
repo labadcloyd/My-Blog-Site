@@ -121,6 +121,14 @@ body {
         flex-direction: column;
     }
 }
+@media only screen and (max-width:600px){
+    .article-thumbnail-image{
+        width: 30%;
+    }
+    .article-thumbnail-content{
+        width: 70%;
+    }
+}
 .header-image{
     background: url(/images/journal.jpeg);
     background-repeat: no-repeat;
@@ -148,7 +156,7 @@ body {
 .content{
     margin-top:20px;
     padding: 20px;
-    background-color: #ffffff
+    background-color: #ffffff;
 }
 .article-thumbnail{
     margin-top:20px;
