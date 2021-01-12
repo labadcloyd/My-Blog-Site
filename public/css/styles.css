@@ -47,37 +47,48 @@ head{
     background-color: #474747;
 }
 #nav-check{
-    display: none;
-}
-#hamburger{
-    display: none;
+    position: absolute;
+    visibility: hidden;
 }
 
 @media only screen and (max-width: 570px) {
-    .navbar-right{
-        visibility: hidden;
+    
+    #nav-check:checked ~ .hamburger{
+        background-color: #474747;
     }
-    #hamburger {
+    #nav-check:checked ~ .navbar-right{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        background-color: #2b2b2b;
+        top: 69px;
+        right: 0px;
+    }
+    #nav-check:not(:checked) ~ .navbar-right{
+        display: none;
+    }
+    .navbar-right a{
+        padding: 25px 45px 25px 45px;
+    }
+    .hamburger {
         display: block;
         position: fixed;
         top: 0px;
         right: 0px;
         padding: 23px 20px 16px 20px;
+        cursor: pointer;
     }
-    #hamburger:hover{
+    .hamburger:hover{
         background-color: #474747;
     }
-    #hamburger span {
+    .hamburger span {
         display: block;
         width: 25px;
         height: 8px;
         border-top: 2px solid #eee;
     }
-    #nav-check:checked ~ .navbar-right{
-        visibility: visible;
-
-    }
 }
+
 /* MAIN CONTENT */
 .main{
     margin-top: 75px;
