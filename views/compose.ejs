@@ -1,3 +1,20 @@
 <%- include('partials/header'); -%>
-<h1>something</h1>
+<div class="main-compose">
+    
+    <div class="compose">
+        <h1 id="compose-title">Compose</h1>
+        <form method="POST" action="/compose" id="form-container">
+            <label for="title-input" class="compose-label">Title</label>
+            <input type="text" name="titleContent" id="title-input" placeholder="Enter the Title">
+            <label for="date-input" class="compose-label">Date</label>
+            <input type="date" name="dateContent" id="date-input" placeholder="Enter the current date">
+            <label for="img-input" class="compose-label">Upload Image</label>
+            <input type="file" id="img-input" name="img" accept="image/*">
+            <label for="content-input" class="compose-label">Content</label>
+            <textarea type="text" name="content" id="content-input" placeholder="Enter the content"></textarea>
+            <button type="submit" id="post-btn">Post</button>
+        </form>
+    </div>
+</div>
+
 <%- include('partials/footer'); -%>

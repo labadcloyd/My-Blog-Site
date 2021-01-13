@@ -27,5 +27,17 @@ app.get('/about', (req,res)=>{
   })
 })
 app.get('/contact', (req,res)=>{
-  res.render('contact.ejs')
+  res.render('contact.ejs', {
+    contactContent: contactContent,
+  })
+})
+app.get('/compose', (req,res)=>{
+  res.render('compose.ejs')
+})
+app.post('/compose', (req,res)=>{
+  let title = req.body.titleContent;
+  let date = req.body.dateContent;
+  let content = req.body.content;
+  console.log(title, date, content, req.statusCode)
+  
 })

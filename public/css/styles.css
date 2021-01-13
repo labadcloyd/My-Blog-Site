@@ -119,6 +119,8 @@ body {
 @media only screen and (max-width: 940px){
     .main{
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 @media only screen and (max-width:600px){
@@ -201,4 +203,105 @@ body {
 #article3 {
     background: url(/images/content-thumbnail/image1.jpeg);
     background-size: cover;
+}
+
+
+
+
+
+/* THIS IS FOR THE COMPOSE PAGE */
+.main-compose{
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.compose{
+    margin: 20px;
+    background-color: #ffffff;
+    padding: 20px 20px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 400px;
+}
+.compose-label{
+    font-size: 1rem;
+    font-weight: bold;
+    pointer-events: none;
+}
+#compose-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0px 0px 0px 20px;
+}
+#form-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 20px;
+}
+#title-input{
+    width: 70%;
+    background-color:  #f1f1f1;
+    border: none;
+    padding: 10px;
+    color: black;
+}
+#title-input:focus{
+    outline:none;
+    background-color:#e2e2e2;
+}    
+#date-input{
+    width: 300px;
+    background-color: #f1f1f1;
+    border: none;
+    padding: 10px;
+    color: black;
+}
+#date-input:focus{
+    outline:none;
+    background-color:  #e2e2e2;
+}
+#img-input{
+    border: none;
+    width: 300px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+#img-input::-webkit-file-upload-button {
+    border: none;
+    padding: 10px;
+    background-color: #dbdbdb;
+    cursor: pointer;
+}
+#img-input::-webkit-file-upload-button:hover {
+    background-color: #e9e9e9;
+}
+#content-input{
+    width: 100%;
+    background-color: #f1f1f1;
+    border: none;
+    padding: 10px;
+    color: black;
+    height: 500px;
+    resize: none;
+}
+#content-input:focus {
+    outline:none;
+    background-color: #e2e2e2;
+}
+#post-btn{
+    background-color: #0078ff;
+    padding: 15px;
+    border: none;
+    width: 140px;
+    color: white;
+    cursor: pointer;
+}
+#post-btn:hover{
+    background-color: #2d8fff;
 }
