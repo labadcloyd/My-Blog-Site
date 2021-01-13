@@ -13,21 +13,25 @@
             Et, nihil illo mollitia culpa sed ea asperiores quos, fugiat praesentium non odio aut quas eligendi numquam eius similique minus repellendus commodi enim ad id totam! Ipsum itaque cumque et.
         </div>
         
-
+        
+        <% posts.forEach((article)=>{ %>
         <a class="article-thumbnail">
-            <div class="article-thumbnail-image" id="article1" >
-            </div>
+            <!-- <div class="article-thumbnail-image" id="article1" >
+            </div> -->
             <div class="article-thumbnail-content">
                 <p class="article-thumbnail-content-title">
-                    This is a title Lorem ipsum dolor sit amet consectetur 
+                    <%= article.title.substr(0,60)+'...' %>
                 </p>
                 <p class="article-thumbnail-content-subtitle">
-                    January 12, 2021
+                    <%= article.date %>
                 </p>
-                <p>ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, natus blanditiis ratione pariatur dolorem molestiae.</p> 
+                <p>
+                    <%= article.content.substr(0,180)+'...' %>
+                </p> 
             </div>
         </a>
-        <a class="article-thumbnail">
+        <% }) %>
+        <!-- <a class="article-thumbnail">
             <div class="article-thumbnail-image" id="article2">
             </div>
             <div class="article-thumbnail-content">
@@ -65,7 +69,7 @@
                 </p>
                 <p>ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, natus blanditiis ratione pariatur dolorem molestiae.</p> 
             </div>
-        </a>
+        </a> -->
     </div>
     <div class="side-bar"> <!-- CONTAINER FOR THE SIDE-CONTENT IS HERE -->
         <div class="content">

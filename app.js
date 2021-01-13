@@ -18,8 +18,12 @@ app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
 
+let posts = [];
+
 app.get('/', (req,res)=>{
-  res.render('home.ejs')
+  res.render('home.ejs',{
+    posts: posts,
+  })
 })
 app.get('/about', (req,res)=>{
   res.render('about.ejs', {
@@ -35,9 +39,11 @@ app.get('/compose', (req,res)=>{
   res.render('compose.ejs')
 })
 app.post('/compose', (req,res)=>{
-  let title = req.body.titleContent;
-  let date = req.body.dateContent;
-  let content = req.body.content;
-  console.log(title, date, content, req.statusCode)
-  
+  let article = {
+    title: req.body.titleContent,
+    date: req.body.dateContent,
+    content: req.body.content,
+  }
+  posts.push(article);
+  res.redirect('/');
 })
