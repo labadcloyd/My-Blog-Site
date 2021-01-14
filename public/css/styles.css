@@ -5,6 +5,9 @@
     font-family: 'Montserrat', sans-serif;
     
 }
+html{
+    height: 100%;
+}
 head{
     min-width: 500px;
 }
@@ -445,4 +448,18 @@ body {
     .for-margin-contact{
         margin: 0;
     }
+}
+
+/* THIS IS FOR THE FOOTER */
+
+.footer-padding{
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: auto;
+    background-color: #c9c9c9;
+}
+.footer{
+    padding: 20px;
+    text-align: center;
+    color: #000000;
 }
