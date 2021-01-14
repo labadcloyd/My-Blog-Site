@@ -30,8 +30,15 @@ body {
     max-width: 1200px;
     margin:auto;
 }
+.navbar-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .navbar-brand{
-    padding:25px;
+    padding:25px 25px 25px 25px;
+    text-decoration: none;
+    color: #ffffff;
 }
 .navbar-right{
     display: flex;
@@ -166,6 +173,8 @@ body {
     display: flex;
     flex-direction: row;
     cursor: pointer;
+    text-decoration: none;
+    color: #000000;
 }
 /* .article-thumbnail-image{
     width: 20%;
@@ -184,29 +193,11 @@ body {
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
-.article-thumbnail-content-subtitle{
+.article-thumbnail-content-date{
     font-size: 0.9rem;
     color: #424242;
     margin-bottom: 5px;
 }
-
-
-
-/* #article1 {
-    background: url(/images/content-thumbnail/image3.jpeg);
-    background-size: cover;
-}
-#article2 {
-    background: url(/images/content-thumbnail/image2.jpeg);
-    background-size: cover;
-}
-#article3 {
-    background: url(/images/content-thumbnail/image1.jpeg);
-    background-size: cover;
-} */
-
-
-
 
 
 /* THIS IS FOR THE COMPOSE PAGE */
@@ -304,4 +295,19 @@ body {
 }
 #post-btn:hover{
     background-color: #2d8fff;
+}
+
+/* THIS IS FOR THE MAIN ARTICLE POST */
+.article{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.article-main-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.article-main-date{
+    font-size: 0.9rem;
+    color: #424242;
 }
