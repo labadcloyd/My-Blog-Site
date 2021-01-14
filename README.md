@@ -3,6 +3,7 @@
 **Version 1.0.0**
 
 ---
+## About
 The daily journal is a simple blog site where you can write your own blogs. This site was made with Node.js along with some npm packages (express, ejs, body-parser, and lodash). This is my first every dynamic site so I apologize if there are some features I couldn't add. But I will be adding more features to the site in the future. 
 ---
 ## How to post an article 
