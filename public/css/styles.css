@@ -124,6 +124,8 @@ body {
     }
 }
 
+
+
 /* MAIN CONTENT */
 .main{
     min-width: 350px;
@@ -180,25 +182,34 @@ body {
     color: #ffffff;
 }
 
-/* THIS IS FOR THE CONTENT */
+/* THIS IS FOR THE CONTENT OF THE HOMEPAGE */
 .content-title{
     font-size: 2.3rem;
     margin-top: 20px;
     padding: 20px;
+    margin-bottom: -20px;
+    background-color: #d8d8d8;
 }
 .content{
     margin-top:20px;
     padding: 20px;
     background-color: #ffffff;
 }
+.article-thumbnail-main-container{
+    background-color: #ffffff;
+    padding: 20px 20px 20px 20px;
+    margin-top:20px;
+}
 .article-thumbnail{
     margin-top:20px;
-    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     cursor: pointer;
     text-decoration: none;
     color: #000000;
+}
+#thumbnail-title{
+    font-size: 1.5rem;
 }
 /* .article-thumbnail-image{
     width: 20%;
@@ -209,7 +220,6 @@ body {
 } */
 .article-thumbnail-content{
     width: 100%;
-    padding: 20px;
     font-size: 1rem;
 }
 .article-thumbnail-content-title{
@@ -373,7 +383,9 @@ body {
     font-size: 0.9rem;
     color: #424242;
 }
-
+.article-main{
+    white-space:pre-line;
+}
 
 /* THIS IS FOR THE CONTACT PAGE  */
 #full-name{

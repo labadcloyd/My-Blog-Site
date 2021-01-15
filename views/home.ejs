@@ -10,24 +10,26 @@
             <%= defaultContent %>
         </div>
         
-        
-        <% posts.forEach((article)=>{ %>
-        <a class="article-thumbnail" href="/posts/<%= article.title %>">
-            <!-- <div class="article-thumbnail-image" id="article1" >
-            </div> -->
-            <div class="article-thumbnail-content">
-                <p class="article-thumbnail-content-title">
-                    <%= article.title.substr(0,60)+'...' %>
-                </p>
-                <p class="article-thumbnail-content-date">
-                    <%= article.date %>
-                </p>
-                <p>
-                    <%= article.content.substr(0,180)+'...' %>
-                </p> 
-            </div>
-        </a>
-        <% }) %>
+        <div class="article-thumbnail-main-container">
+            <h2 id="thumbnail-title">Articles</h2>
+            <% posts.forEach((article)=>{ %>
+                <a class="article-thumbnail" href="/posts/<%= article.title %>">
+                    <!-- <div class="article-thumbnail-image" id="article1" >
+                    </div> -->
+                    <div class="article-thumbnail-content">
+                        <p class="article-thumbnail-content-title">
+                            <%= article.title.substr(0,60)+'...' %>
+                        </p>
+                        <p class="article-thumbnail-content-date">
+                            <%= article.date %>
+                        </p>
+                        <p>
+                            <%= article.content.substr(0,180)+'...' %>
+                        </p> 
+                    </div>
+                </a>
+            <% }) %>
+        </div>
     </div>
 
     <div class="side-bar"> <!-- CONTAINER FOR THE SIDE-CONTENT IS HERE -->

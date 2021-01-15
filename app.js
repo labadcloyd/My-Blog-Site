@@ -58,11 +58,13 @@ app.get('/posts/:topic',(req,res)=>{
   posts.forEach((post)=>{
     let storedTitle = _.kebabCase(post.title);
     if (storedTitle === reqTitle){
+
       res.render('post.ejs', {
         title: post.title,
         date: post.date,
         content: post.content,
       })
+
     }
   })
 });
