@@ -56,8 +56,8 @@ app.get('/posts/:topic',(req,res)=>{
   let reqTitle = _.kebabCase(req.params.topic);
     
   posts.forEach((post)=>{
-    let storedTitle = _.kebabCase(post.title);
-    if (storedTitle === reqTitle){
+    
+    if (_.kebabCase(post.title) === reqTitle){
 
       res.render('post.ejs', {
         title: post.title,
