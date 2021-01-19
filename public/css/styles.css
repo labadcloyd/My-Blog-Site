@@ -44,6 +44,11 @@ body {
     max-width: 1200px;
     margin:auto;
 }
+.nav-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .navbar-header{
     display: flex;
     justify-content: center;
