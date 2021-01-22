@@ -190,10 +190,7 @@ body {
 /* THIS IS FOR THE CONTENT OF THE HOMEPAGE */
 .content-title{
     font-size: 2.3rem;
-    margin-top: 20px;
-    padding: 20px;
-    margin-bottom: -20px;
-    background-color: #d8d8d8;
+    padding: 0px 20px 20px 0px;
 }
 .content{
     margin-top:20px;
