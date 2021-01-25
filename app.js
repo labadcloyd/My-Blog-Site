@@ -41,11 +41,12 @@ app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
 
-let posts = [];
 app.get('/', (req,res)=>{
-  res.render('home.ejs',{
-    posts: posts,
-    defaultContent: homeStartingContent,
+  article.find((err,article)=>{
+    res.render('home.ejs',{
+      article:article,
+      defaultContent: homeStartingContent,
+    })
   })
 })
 app.get('/about', (req,res)=>{
@@ -62,27 +63,27 @@ app.get('/compose', (req,res)=>{
   res.render('compose.ejs')
 })
 app.post('/compose', (req,res)=>{
-  let article = {
+  article.insertMany({
     title: req.body.titleContent,
     date: req.body.dateContent,
     content: req.body.content,
-  }
-  posts.push(article);
+  });
   res.redirect('/');
 })
 app.get('/posts/:topic',(req,res)=>{
   let reqTitle = _.kebabCase(req.params.topic);
+  article.find((err, article)=>{
+    article.forEach((article)=>{
     
-  posts.forEach((post)=>{
-    
-    if (_.kebabCase(post.title) === reqTitle){
-      res.render('post.ejs', {
-        title: post.title,
-        date: post.date,
-        content: post.content,
-      })
-
-    }
-  })
+      if (_.kebabCase(article.title) === reqTitle){
+        res.render('post.ejs', {
+          title: article.title,
+          date: article.date,
+          content: article.content,
+        })
+  
+      }
+    })
+  })  
 });
 
