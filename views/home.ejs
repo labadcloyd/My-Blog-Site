@@ -22,7 +22,7 @@
                             <%= article.title.substr(0,60)+'...' %>
                         </p>
                         <p class="article-thumbnail-content-date">
-                            <%= article.date %>
+                            <%= article.date.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'} ) %>
                         </p>
                         <p>
                             <%= article.content.substr(0,180)+'...' %>

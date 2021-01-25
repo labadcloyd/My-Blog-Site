@@ -41,10 +41,11 @@ app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
 
+
 app.get('/', (req,res)=>{
   article.find((err,article)=>{
     res.render('home.ejs',{
-      article:article,
+      article: article,
       defaultContent: homeStartingContent,
     })
   })
@@ -70,6 +71,7 @@ app.post('/compose', (req,res)=>{
   });
   res.redirect('/');
 })
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
 app.get('/posts/:topic',(req,res)=>{
   let reqTitle = _.kebabCase(req.params.topic);
   article.find((err, article)=>{
@@ -78,7 +80,7 @@ app.get('/posts/:topic',(req,res)=>{
       if (_.kebabCase(article.title) === reqTitle){
         res.render('post.ejs', {
           title: article.title,
-          date: article.date,
+          date: article.date.toLocaleDateString('en-US',options),
           content: article.content,
         })
   
