@@ -72,11 +72,11 @@ app.post('/compose', (req,res)=>{
 })
 const options = { year: 'numeric', month: 'long', day: 'numeric' };
 app.get('/posts/:topic',(req,res)=>{
-  let reqTitle = _.kebabCase(req.params.topic);
+  let reqtitle = _.kebabCase(req.params.topic);
   article.find((err, article)=>{
     article.forEach((article)=>{
     
-      if (_.kebabCase(article.title) === reqTitle){
+      if (_.kebabCase(article.title) === reqtitle){
         res.render('post.ejs', {
           title: article.title,
           date: article.date.toLocaleDateString('en-US',options),
