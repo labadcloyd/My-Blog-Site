@@ -72,19 +72,15 @@ app.post('/compose', (req,res)=>{
 })
 const options = { year: 'numeric', month: 'long', day: 'numeric' };
 app.get('/posts/:topic',(req,res)=>{
-  let reqtitle = _.kebabCase(req.params.topic);
-  article.find((err, article)=>{
-    article.forEach((article)=>{
-    
-      if (_.kebabCase(article.title) === reqtitle){
+  let reqtitle = req.params.topic;
+  console.log(reqtitle);
+  article.findOne({_id: reqtitle},(err, article)=>{
+        console.log(article.title)
         res.render('post.ejs', {
           title: article.title,
           date: article.date.toLocaleDateString('en-US',options),
           content: article.content,
         })
-  
-      }
-    })
   })  
 });
 
