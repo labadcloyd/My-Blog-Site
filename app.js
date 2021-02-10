@@ -2,11 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose')
+require('dotenv').config();
 
 const _ = require('lodash');
 const { kebabCase } = require("lodash");
 
-mongoose.connect('mongodb://localhost:27017/blogSite', {useNewUrlParser:true, useUnifiedTopology: true })
+let mongoServerPassword = process.env.MONGO_SERVER_PASSWORD
+mongoose.connect(process.env.MONGODB_URL||'mongodb+srv://admin-cloyd:'+mongoServerPassword+'@todo-app.0pmsv.mongodb.net/blogSite?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology: true })
+mongoose.set('useFindAndModify', false);
 
 const articleSchema = new mongoose.Schema({
   title:{
@@ -73,14 +76,18 @@ app.post('/compose', (req,res)=>{
 const options = { year: 'numeric', month: 'long', day: 'numeric' };
 app.get('/posts/:topic',(req,res)=>{
   let reqtitle = req.params.topic;
-  console.log(reqtitle);
   article.findOne({_id: reqtitle},(err, article)=>{
-        console.log(article.title)
-        res.render('post.ejs', {
-          title: article.title,
-          date: article.date.toLocaleDateString('en-US',options),
-          content: article.content,
-        })
+        if(!err){
+          res.render('post.ejs', {
+            title: article.title,
+            date: article.date.toLocaleDateString('en-US',options),
+            content: article.content,
+          })
+        }
+        if(err){
+          console.log(err);
+          res.redirect('/')
+        }
   })  
 });
 
